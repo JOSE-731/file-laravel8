@@ -1178,7 +1178,7 @@ eval("window._ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodas
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("throw new Error(\"Module build failed (from ./node_modules/css-loader/index.js):\\nModuleError: Module Error (from ./node_modules/sass-loader/dist/cjs.js):\\nNode Sass version 7.0.1 is incompatible with ^4.0.0 || ^5.0.0 || ^6.0.0.\\n    at Object.emitError (C:\\\\laragon\\\\www\\\\file\\\\node_modules\\\\webpack\\\\lib\\\\NormalModule.js:173:6)\\n    at getSassImplementation (C:\\\\laragon\\\\www\\\\file\\\\node_modules\\\\sass-loader\\\\dist\\\\utils.js:92:21)\\n    at Object.loader (C:\\\\laragon\\\\www\\\\file\\\\node_modules\\\\sass-loader\\\\dist\\\\index.js:35:59)\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuL3Jlc291cmNlcy9zYXNzL2FwcC5zY3NzLmpzIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./resources/sass/app.scss\n");
+eval("// removed by extract-text-webpack-plugin//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvc2Fzcy9hcHAuc2Nzcz8wZTE1Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBIiwiZmlsZSI6Ii4vcmVzb3VyY2VzL3Nhc3MvYXBwLnNjc3MuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyByZW1vdmVkIGJ5IGV4dHJhY3QtdGV4dC13ZWJwYWNrLXBsdWdpbiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/sass/app.scss\n");
 
 /***/ }),
 
