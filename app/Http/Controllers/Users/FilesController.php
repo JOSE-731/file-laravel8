@@ -35,7 +35,8 @@ class FilesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd('sisas');
+
     }
 
     /**
@@ -46,7 +47,6 @@ class FilesController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
