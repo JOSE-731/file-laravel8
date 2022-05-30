@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\FilesRequest;
 use Illuminate\Http\Request;
 
 class FilesController extends Controller
@@ -33,10 +34,9 @@ class FilesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FilesRequest $request)
     {
-        dd('sisas');
-
+        dd($request);
     }
 
     /**
