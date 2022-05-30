@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Users;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\FilesRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\File as ModelsFile;
 
 class FilesController extends Controller
 {
@@ -36,7 +38,23 @@ class FilesController extends Controller
      */
     public function store(FilesRequest $request)
     {
-        dd($request);
+        $user = Auth::id();
+        $files = $request->file('file');
+
+       /* if(count($files) > 1){
+
+        }*/
+
+        foreach($files as $file){
+            ModelsFile::create(
+                [
+                    'name' => $file->getClientOriginalName(),
+                    'user_id' => $user
+                ]
+                );
+        }
+
+        return back();
     }
 
     /**
