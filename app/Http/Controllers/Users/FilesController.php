@@ -7,6 +7,7 @@ use App\Http\Requests\FilesRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\File as ModelsFile;
+use Illuminate\Support\Facades\Storage;
 
 class FilesController extends Controller
 {
@@ -46,13 +47,14 @@ class FilesController extends Controller
         }*/
 
         foreach($files as $file){
-            ModelsFile::create(
-                [
-                    'name' => $file->getClientOriginalName(),
-                    'user_id' => $user
-                ]
-                );
-        }
+            if(Storage::putFileAs('/public/' . $user . '/', $file, $file->getClientOriginalName())){
+
+                ModelsFile::create([
+                        'name' => $file->getClientOriginalName(),
+                        'user_id' => $user
+                    ]);
+              }
+            }
 
         return back();
     }
