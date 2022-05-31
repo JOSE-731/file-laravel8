@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\File as ModelsFile;
 use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class FilesController extends Controller
 {
@@ -47,6 +48,7 @@ class FilesController extends Controller
         }*/
 
         foreach($files as $file){
+
             if(Storage::putFileAs('/public/' . $user . '/', $file, $file->getClientOriginalName())){
 
                 ModelsFile::create([
@@ -55,6 +57,9 @@ class FilesController extends Controller
                     ]);
               }
             }
+
+
+        Alert::success('Exito', 'Guardado de manera exitosa');
 
         return back();
     }

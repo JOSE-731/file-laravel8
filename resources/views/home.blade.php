@@ -21,7 +21,7 @@
                             @error('file')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                                <input class="form-control" type="file" name="file[]" multiple>
+                                <input class="form-control" type="file" name="file[]" multiple required>
                             <button type="submit" class="btn btn-primary float-right mt-2">
                                 Subir archivos
                             </button>
