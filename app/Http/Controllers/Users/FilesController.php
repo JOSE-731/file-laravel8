@@ -3,7 +3,12 @@
 namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\FilesRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\File as ModelsFile;
+use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class FilesController extends Controller
 {
@@ -33,9 +38,30 @@ class FilesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FilesRequest $request)
     {
-        //
+        $user = Auth::id();
+        $files = $request->file('file');
+
+       /* if(count($files) > 1){
+
+        }*/
+
+        foreach($files as $file){
+
+            if(Storage::putFileAs('/public/' . $user . '/', $file, $file->getClientOriginalName())){
+
+                ModelsFile::create([
+                        'name' => $file->getClientOriginalName(),
+                        'user_id' => $user
+                    ]);
+              }
+            }
+
+
+        Alert::success('Exito', 'Guardado de manera exitosa');
+
+        return back();
     }
 
     /**
@@ -46,7 +72,6 @@ class FilesController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
