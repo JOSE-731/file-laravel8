@@ -21,3 +21,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/upload', [App\Http\Controllers\Users\FilesController::class, 'store'])->name('users.files.store');
+Route::get('/index', [App\Http\Controllers\Users\FilesController::class, 'index'])->name('users.files.index');

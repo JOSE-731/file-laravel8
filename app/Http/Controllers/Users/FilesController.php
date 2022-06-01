@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\File as ModelsFile;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Str;
 
 class FilesController extends Controller
 {
@@ -19,7 +20,10 @@ class FilesController extends Controller
      */
     public function index()
     {
-        //
+
+        $files = ModelsFile::whereUserId(Auth::id())->get();
+
+        return view('index', compact('files'));
     }
 
     /**
@@ -48,11 +52,11 @@ class FilesController extends Controller
         }*/
 
         foreach($files as $file){
-
+            $fileName = Str::slug($file->getClientOriginalName()).'.'. $file->getClientOriginalExtension();
             if(Storage::putFileAs('/public/' . $user . '/', $file, $file->getClientOriginalName())){
 
                 ModelsFile::create([
-                        'name' => $file->getClientOriginalName(),
+                        'name' =>$fileName,
                         'user_id' => $user
                     ]);
               }
