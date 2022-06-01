@@ -22,7 +22,7 @@
                           <td>{{$file->id}}</td>
                           <td>{{$file->name}}</td>
                           <td>
-                              <a href="storage/{{Auth::id()}}/{{$file->name}}" class="btn btn-sm btn-outline-primary">Ver</a>
+                              <a target="_blank" href="storage/{{Auth::id()}}/{{$file->name}}" class="btn btn-sm btn-outline-primary">Ver</a>
                           </td>
                           <td>
                             <a href="" class="btn btn-sm btn-outline-danger">Eliminar</a>
