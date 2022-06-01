@@ -19,7 +19,10 @@ class FilesController extends Controller
      */
     public function index()
     {
-        //
+
+        $files = ModelsFile::all();
+
+        return view('index', compact('files'));
     }
 
     /**
