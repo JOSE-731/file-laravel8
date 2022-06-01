@@ -20,7 +20,7 @@ class FilesController extends Controller
     public function index()
     {
 
-        $files = ModelsFile::all();
+        $files = ModelsFile::whereUserId(Auth::id())->get();
 
         return view('index', compact('files'));
     }
