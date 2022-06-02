@@ -109,6 +109,15 @@ class FilesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $file = ModelsFile::whereId($id)->firstOrFail();
+
+        //Borrar del storage
+        unlink(public_path('storage' . '/' . Auth::id() . '/' . $file->name));
+
+        $file->delete();
+
+        Alert::success('Exito', 'Eliminado de manera exitosa');
+
+        return back();
     }
 }

@@ -25,7 +25,11 @@
                               <a target="_blank" href="storage/{{Auth::id()}}/{{$file->name}}" class="btn btn-sm btn-outline-primary">Ver</a>
                           </td>
                           <td>
-                            <a href="" class="btn btn-sm btn-outline-danger">Eliminar</a>
+                           <form action="{{route('users.files.destroy', $file->id)}}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                              <button type="submit" class="btn btn-sm btn-outline-danger">Eliminar</button>
+                           </form>
                           </td>
                       </tr>
                         @endforeach
